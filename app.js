@@ -7,6 +7,7 @@ const ssl = {
     cert: fs.readFileSync('./ssl/server.crt', 'utf8'),
 };
 
+// ca: [fs.readFileSync('./ssl/ca.crt', 'utf8')],
 const server = require('https').createServer(ssl, app);
 const io = require('socket.io')(server);
 
