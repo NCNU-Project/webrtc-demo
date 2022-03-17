@@ -3,9 +3,8 @@ const app = express();
 const fs = require('fs');
 
 const ssl = {
-    key: fs.readFileSync('./ssl/yuanchieh.com.key', 'utf8'),
-    cert: fs.readFileSync('./ssl/yuanchieh.com.crt', 'utf8'),
-    ca: [fs.readFileSync('./ssl/gdig2_bundle.crt', 'utf8')]
+    key: fs.readFileSync('./ssl/privkey.key', 'utf8'),
+    cert: fs.readFileSync('./ssl/server.crt', 'utf8'),
 };
 
 const server = require('https').createServer(ssl, app);
